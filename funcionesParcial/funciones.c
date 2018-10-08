@@ -497,3 +497,75 @@ void harcodeoEmployee(eEmployee* list)
     }
 }
 
+void function_Fecha( )
+{
+    eFecha nuevaFecha;
+    char diaArray[10];
+    char mesArray[10];
+    char anioArray[10];
+    int auxDia;
+    int auxMes;
+    int auxAnio;
+
+    /// SOLICITAR INGRESAR MES QUE TENGA HASTA 31 DIAS
+
+    do
+    {
+
+        if(!function_getStringNumeros("\nIngrese el dia:",diaArray))
+        {
+            printf("El dia solo debe tener numeros.") ;
+        }else
+            {
+                auxDia = atoi(diaArray);
+            }
+
+        if(auxDia > 31)
+        {
+            printf("\n Error, el dia no puede ser mayor a 31.\n\n");
+            system("cls");
+        }else
+        {
+           nuevaFecha.dia = auxDia;
+        }
+    }
+    while(auxDia > 31) ;
+
+    /// SOLICITAR INGRESAR ME SQUE TENGA HASTA 12 (MESES)
+
+    do
+    {
+
+        if(!function_getStringNumeros("\n\nIngrese el mes:",mesArray))
+        {
+            printf("El mes solo debe tener numeros.") ;
+        }else
+            {
+                auxMes = atoi(mesArray);
+            }
+
+        if(auxMes > 12)
+        {
+            printf("\n Error, el mes no puede ser mayor a 12.\n\n");
+            system("cls");
+        }else
+        {
+           nuevaFecha.mes= auxMes ;
+        }
+    }
+    while(auxMes > 12) ;
+
+    /// VALIDACION DE AÑO
+
+     if(!function_getStringNumeros("\n\nIngrese el anio:",anioArray))
+     {
+         printf("\n Erro el año debe tener solo numeros");
+     }else{
+
+     auxAnio = atoi(anioArray);
+     nuevaFecha.anio = anioArray ;
+     }
+}
+
+
+void function_Fecha( ) ;

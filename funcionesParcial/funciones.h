@@ -1,3 +1,12 @@
+typedef struct
+{
+
+    int dia;
+    int mes;
+    int anio;
+
+} eFecha;
+
 
 //Funciones para abm
 
@@ -134,3 +143,5 @@ void harcodeoEmployee(eEmployee* list);
  */
 
 int menu ( ) ;
+
+
