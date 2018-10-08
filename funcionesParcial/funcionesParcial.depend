@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1538941167 source:c:\users\joaco\desktop\funcionesparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"biblotecaNunez.h"
+
+1538940367 source:c:\users\joaco\desktop\funcionesparcial\biblotecanunez.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"biblotecaNunez.h"
+
+1538940354 c:\users\joaco\desktop\funcionesparcial\biblotecanunez.h
+
