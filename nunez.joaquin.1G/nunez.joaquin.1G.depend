@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1539041454 source:d:\nunez.joaquin.1g\cliente.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"biblotecaNunez.h"
+	"cliente.h"
+
+1539041320 d:\nunez.joaquin.1g\cliente.h
+
+1539040276 source:d:\nunez.joaquin.1g\biblotecanunez.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"biblotecaNunez.h"
+
+1539040166 d:\nunez.joaquin.1g\biblotecanunez.h
+
+1539038489 source:d:\nunez.joaquin.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"biblotecaNunez.h"
+	"cliente.h"
+
+1539039532 source:d:\nunez.joaquin.1g\alquiler.c
+
