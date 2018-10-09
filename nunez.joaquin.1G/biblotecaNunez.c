@@ -139,7 +139,7 @@ void function_continueYesOrNo(char msj[],char input[])
     while(!(input[0] == 's' || input[0] == 'n' || input[0] == 'S' || input[0] == 'N'));
 
 }
-
+/*
 void harcodeoCategoria(eCategoria* list)
 {
     eCategoria   x[]={
@@ -186,3 +186,4 @@ void showJuegos(eJuego list[],int len)
     }
 
 }
+*/

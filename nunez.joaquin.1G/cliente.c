@@ -35,7 +35,7 @@ int menu ( )
     printf("\n*** Menu de Opciones ***\n\n");
     printf("1- CLIENTES\n");
     printf("2- ALQUILERES \n") ;
-    printf("3-SALIR\n\n") ;
+    printf("3- SALIR\n\n") ;
     while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
     {
         printf("\n*** ERROR *** Debe ingresar un numero del 1 al 3. \n") ;
@@ -45,6 +45,28 @@ int menu ( )
     option = atoi(auxOption) ;
     return option;
 }
+
+int menuClientes ( )
+{
+    char auxOption[2];
+    int option;
+    system("cls") ;
+    printf("\n*** CLIENTES ***\n\n");
+    printf("1- ALTAS\n");
+    printf("2- MODIFICAR\n") ;
+    printf("3- BAJA\n") ;
+    printf("4- LISTAR\n") ;
+    printf("5- SALIR DE CLIENTES\n") ;
+    while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
+    {
+        printf("\n*** ERROR *** Debe ingresar un numero del 1 al 5. \n") ;
+        system("pause") ;
+
+    }
+    option = atoi(auxOption) ;
+    return option;
+}
+
 
 int addCliente(eCliente list[],int len)
 {
@@ -145,7 +167,6 @@ int findClienteByCode(eCliente list[], int len, int code)
 }
 
 
-
 void modifyCliente(eCliente list[], int len)
 {
     int code;
@@ -232,7 +253,7 @@ void modifyCliente(eCliente list[], int len)
                 break ;
             case 3:
                 // modifica telefono
-                showEmployee(list[index]) ;
+                showCliente(list[index]) ;
                 printf("\n\n");
                 if(!function_getStringNumeros("Ingrese nuevo telefono: ",newTelefono))
                 {
@@ -261,3 +282,81 @@ void modifyCliente(eCliente list[], int len)
     }
 }
 
+
+int removeCliente(eCliente list[], int len)
+{
+    int index;
+    int ret ;
+    int codeFinal;
+    char code[10] ;
+    char seguir[1];
+
+    if(list != NULL && len > 0)
+    {
+        system("cls");
+        printf("  *** Baja Cliente ***\n\n");
+
+
+        if(!function_getStringNumeros("Ingrese codigo: ",code))
+        {
+            printf("*** ERROR *** El codigo debe contener solo numeros.\n\n");
+            system("pause") ;
+            system("cls");
+        }
+        else
+        {
+
+            codeFinal = atoi(code) ;
+            index = findClienteByCode(list,len,codeFinal);
+
+
+            if(index == -1)
+            {
+                printf("No hay ningun cliente con codigo %d",code) ;
+            }
+            else
+            {
+                ret = 0;
+                showCliente(list[index]) ;
+                function_continueYesOrNo("\nConfima borrado s/n: ",seguir);
+                if(seguir[0] == 'n' || seguir[0] == 'N')
+                {
+                    printf("Baja cancelada\n\n");
+                }
+                else
+                {
+
+                    list[index].isEmpty = 1;
+                    printf("Borrado exitoso\n\n");
+                }
+                system("pause");
+            }
+        }
+    }
+    return ret ;
+}
+
+
+void listarClientes(eCliente list[], int len)
+{
+    eCliente auxCliente;
+    for(int i = 0; i < len - 1; i++)
+    {
+        for(int j = i + 1; j < len; j++)
+        {
+            if(strcmp(list[j].nombre, list[i].nombre) < 0  && list[j].isEmpty == 0 && list[i].isEmpty == 0)
+            {
+                auxCliente = list[i];
+                list[i] = list[j];
+                list[j] = auxCliente;
+            }
+            else if(strcmp(list[j].nombre, list[i].nombre) == 0 && strcmp(list[j].sexo,list[i].sexo)  && list[j].isEmpty == 0 && list[i].isEmpty == 0)
+            {
+                auxCliente = list[i];
+                list[i] = list[j];
+                list[j] = auxCliente;
+            }
+        }
+    }
+    system("cls") ;
+}

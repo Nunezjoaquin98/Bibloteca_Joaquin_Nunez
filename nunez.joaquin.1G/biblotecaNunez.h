@@ -1,4 +1,4 @@
-typedef struct
+/*typedef struct
 {
   int id;
   char descripcion[51];
@@ -11,7 +11,7 @@ typedef struct
     float importe;
     eCategoria idCategoria;
 }eJuego;
-
+*/
 //funciones get.
 /**
  * \brief Solicita un número al usuario y devuelve el resultado
@@ -122,14 +122,14 @@ int menu ( ) ;
   * \param array a cargar
   *
   */
- void harcodeoCategoria(eCategoria* list) ;
+// void harcodeoCategoria(eCategoria* list) ;
 
  /** \brief Se carga la structura juego con 5 juegos
   *
   * \param  array a cargar
   *
   */
-void harcodeoJuego(eJuego* list);
+//void harcodeoJuego(eJuego* list);
 
 
 /** \brief Muestra un juego
@@ -137,7 +137,8 @@ void harcodeoJuego(eJuego* list);
  * \param array del juego a mostrar
  *
  */
-void showJuego(eJuego list) ;
+//void showJuego(eJuego list) ;
+
 
 /** \brief  Muestra todos los juegos cargados en el array
  *
@@ -145,5 +146,4 @@ void showJuego(eJuego list) ;
  * \param  tamaño del array
  *
  */
-void showJuegos(eJuego list[],int len) ;
-
+//void showJuegos(eJuego list[],int len) ;
